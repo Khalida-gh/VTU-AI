@@ -1,0 +1,288 @@
+/* ============================================================
+   Layout
+   ============================================================ */
+
+.app-shell{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.app-layout{
+  width:100%;
+  flex:1;
+  display:grid;
+  grid-template-columns:280px minmax(0,1fr) 260px;
+  gap:22px;
+  padding:24px clamp(16px, 4vw, 40px);
+  align-items:start;
+}
+
+.left-panel,
+.right-panel{
+  position:sticky;
+  top:96px;
+}
+
+.panel{
+  background:var(--paper-raised);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);
+}
+
+.left-panel .panel{
+  padding:20px;
+}
+
+.right-panel .panel{
+  padding:22px;
+}
+
+.main-content{
+  min-width:0;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width:1180px){
+  .app-layout{
+    grid-template-columns:240px minmax(0,1fr);
+  }
+  .right-panel{
+    display:none;
+  }
+}
+
+@media (max-width:860px){
+  .app-layout{
+    grid-template-columns:1fr;
+  }
+  .left-panel{
+    position:relative;
+    top:0;
+    order:2;
+  }
+  .main-content{
+    order:1;
+  }
+}
+
+/* ============================================================
+   Answer sheet — the signature element.
+   Styled like a page from an Indian ruled notebook: faint blue
+   rules, a red margin line, and a tilted grading stamp for the
+   marks the answer was written for.
+   ============================================================ */
+
+.answer-sheet{
+  margin-top:28px;
+  position:relative;
+  background:
+    repeating-linear-gradient(
+      var(--paper-raised) 0px,
+      var(--paper-raised) 30px,
+      var(--paper-line) 31px,
+      var(--paper-raised) 32px
+    );
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:38px 34px 34px 64px;
+  overflow:hidden;
+  animation:sheet-in .45s ease both;
+}
+
+.answer-sheet::before{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:42px;
+  width:1.5px;
+  background:var(--margin);
+  opacity:.55;
+}
+
+@keyframes sheet-in{
+  from{ opacity:0; transform:translateY(10px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.answer-sheet-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.answer-sheet-head h2{
+  font-family:var(--font-display);
+  font-size:22px;
+  font-weight:600;
+  color:var(--ink);
+}
+
+.answer-sheet-head p{
+  margin-top:4px;
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  letter-spacing:.02em;
+  color:var(--ink-faint);
+}
+
+.marks-stamp{
+  flex-shrink:0;
+  width:74px;
+  height:74px;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  color:var(--gold);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transform:rotate(-8deg);
+  font-family:var(--font-mono);
+  line-height:1.1;
+  background:var(--gold-soft);
+}
+
+.marks-stamp strong{
+  font-size:20px;
+}
+
+.marks-stamp span{
+  font-size:9px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.markdown-body{
+  font-family:var(--font-body);
+  line-height:30px;
+  color:var(--ink);
+  font-size:15.5px;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3{
+  font-family:var(--font-display);
+  margin:6px 0 4px;
+  line-height:30px;
+}
+
+.markdown-body p{
+  margin:0;
+}
+
+.markdown-body ul,
+.markdown-body ol{
+  margin:0 0 0 22px;
+}
+
+.markdown-body li{
+  margin:0;
+}
+
+.markdown-body code{
+  font-family:var(--font-mono);
+  background:var(--accent-soft);
+  padding:1px 6px;
+  border-radius:5px;
+  font-size:.9em;
+}
+
+.markdown-body pre{
+  background:var(--ink);
+  color:var(--paper);
+  padding:16px;
+  border-radius:var(--radius-sm);
+  overflow:auto;
+  line-height:1.5;
+}
+
+.markdown-body pre code{
+  background:transparent;
+  padding:0;
+  color:inherit;
+}
+
+.answer-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:26px;
+  padding-top:20px;
+  border-top:1px dashed var(--border);
+}
+
+.answer-actions button{
+  border:1px solid var(--border);
+  background:var(--paper-raised);
+  color:var(--ink);
+  padding:9px 16px;
+  border-radius:var(--radius-sm);
+  font-weight:600;
+  font-size:13.5px;
+  cursor:pointer;
+  transition:.2s;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.answer-actions button:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:translateY(-1px);
+}
+
+/* ============================================================
+   Empty & loading states
+   ============================================================ */
+
+.state-card{
+  margin-top:28px;
+  padding:56px 32px;
+  text-align:center;
+  border:1px dashed var(--border);
+  border-radius:var(--radius-lg);
+  color:var(--ink-soft);
+}
+
+.state-card .state-icon{
+  width:52px;
+  height:52px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--accent-soft);
+  color:var(--accent);
+}
+
+.state-card h3{
+  font-family:var(--font-display);
+  font-size:19px;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+
+.state-card p{
+  max-width:420px;
+  margin:0 auto;
+  font-size:14.5px;
+  line-height:1.6;
+}
+
+.state-card.loading .state-icon{
+  animation:spin 1.1s linear infinite;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}

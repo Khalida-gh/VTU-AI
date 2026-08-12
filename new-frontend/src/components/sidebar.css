@@ -1,0 +1,175 @@
+.sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.sidebar-title{
+  font-family:var(--font-display);
+  font-size:19px;
+  font-weight:600;
+  color:var(--ink);
+}
+
+.sidebar-actions{
+  display:flex;
+  gap:8px;
+}
+
+.sidebar-actions button,
+.new-folder-btn,
+.back-history-button{
+  flex:1;
+  height:38px;
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  background:var(--paper);
+  color:var(--ink-soft);
+  font-size:12.5px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.new-folder-btn:hover,
+.back-history-button:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  background:var(--accent-soft);
+}
+
+.sidebar-empty{
+  padding:24px 10px;
+  text-align:center;
+  color:var(--ink-faint);
+  font-size:13.5px;
+  border:1px dashed var(--border);
+  border-radius:var(--radius-md);
+}
+
+/* ---------- folders ---------- */
+
+.folder-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:12px 14px;
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  background:var(--paper);
+  cursor:pointer;
+  transition:.2s;
+}
+
+.folder-card:hover{
+  border-color:var(--accent);
+  background:var(--accent-soft);
+}
+
+.folder-name{
+  font-size:14px;
+  font-weight:600;
+  color:var(--ink);
+  cursor:pointer;
+}
+
+.folder-delete-button{
+  border:none;
+  background:transparent;
+  padding:4px 6px;
+  cursor:pointer;
+  color:var(--ink-faint);
+  border-radius:6px;
+  display:flex;
+}
+
+.folder-delete-button:hover{
+  background:var(--margin-soft);
+  color:var(--margin);
+}
+
+/* ---------- history cards ---------- */
+
+.history-card{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:14px;
+  border-radius:var(--radius-md);
+  border:1px solid var(--border);
+  background:var(--paper);
+  cursor:pointer;
+  transition:.2s;
+}
+
+.history-card:hover{
+  border-color:var(--accent);
+  box-shadow:var(--shadow-sm);
+  transform:translateY(-1px);
+}
+
+.history-card-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.history-card-top h4{
+  flex:1;
+  font-size:13.5px;
+  font-weight:600;
+  line-height:1.4;
+  color:var(--ink);
+}
+
+.history-card small{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.02em;
+  color:var(--ink-faint);
+}
+
+.favourite-button{
+  border:none;
+  background:transparent;
+  cursor:pointer;
+  padding:2px;
+  color:var(--ink-faint);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.favourite-button:hover,
+.favourite-button.active{
+  color:var(--gold);
+}
+
+.history-card select{
+  height:32px;
+  border-radius:7px;
+  border:1px solid var(--border);
+  background:var(--paper-raised);
+  color:var(--ink-soft);
+  font-size:12px;
+  padding:0 8px;
+  cursor:pointer;
+}
+
+.delete-button{
+  align-self:flex-start;
+  border:none;
+  background:transparent;
+  color:var(--margin);
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+  padding:2px 0;
+}
+
+.delete-button:hover{
+  text-decoration:underline;
+}

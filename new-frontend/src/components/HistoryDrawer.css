@@ -1,0 +1,115 @@
+.history-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.25);
+
+display:flex;
+
+justify-content:flex-start;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.3s;
+
+z-index:999;
+}
+
+.history-overlay.show{
+
+opacity:1;
+
+pointer-events:auto;
+}
+
+.history-drawer{
+
+width:380px;
+
+height:100vh;
+
+background:white;
+
+padding:30px;
+
+transform:translateX(-100%);
+
+transition:.35s;
+
+overflow:auto;
+}
+
+.history-overlay.show .history-drawer{
+
+transform:translateX(0);
+}
+
+.history-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+}
+
+.history-header button{
+
+border:none;
+
+background:none;
+
+cursor:pointer;
+}
+
+.history-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+}
+
+.history-card{
+
+padding:18px;
+
+border-radius:14px;
+
+background:#f8fafc;
+
+cursor:pointer;
+
+transition:.2s;
+}
+
+.history-card:hover{
+
+background:#2563eb;
+
+color:white;
+}
+.history-card{
+    background:#f8fafc;
+    border-radius:14px;
+    padding:14px;
+    margin-bottom:12px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.history-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+body.dark .history-card{
+    background:#334155;
+}

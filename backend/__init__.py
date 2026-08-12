@@ -1,0 +1,1 @@
+"""FastAPI backend package for the VTU AI answer engine."""

@@ -1,0 +1,105 @@
+/* ============================================================
+   VTU AI — global tokens
+   Design idea: the "model-answer notebook" — a study tool that
+   feels like the ruled, red-margin notebooks Indian students
+   write exam answers in, rebuilt as a clean product UI.
+   ============================================================ */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+  width:100%;
+  min-height:100vh;
+}
+
+:root{
+  /* ---- palette ---- */
+  --ink:#1b2a4a;            /* primary text, fountain-pen navy */
+  --ink-soft:#4a5578;       /* secondary text */
+  --ink-faint:#8891ab;      /* tertiary / placeholder text */
+
+  --paper:#f7f5ef;          /* page background, warm notebook white */
+  --paper-raised:#ffffff;   /* cards */
+  --paper-line:#c9d3ee;     /* faint ruled lines on the answer sheet */
+
+  --margin:#b23a48;         /* notebook margin red — also "danger" */
+  --margin-soft:#f2dde0;
+
+  --accent:#293e8c;         /* primary indigo — buttons, links, focus */
+  --accent-hover:#1f2f6e;
+  --accent-soft:#e7eaf8;
+
+  --gold:#c68a2e;           /* grading-stamp gold — marks, highlights */
+  --gold-soft:#f3e5c9;
+
+  --border:#e3ddcd;         /* hairline borders on paper bg */
+  --shadow:0 20px 45px -20px rgba(27,42,74,.18);
+  --shadow-sm:0 8px 20px -10px rgba(27,42,74,.14);
+
+  --radius-lg:20px;
+  --radius-md:14px;
+  --radius-sm:9px;
+
+  --font-display:"IBM Plex Serif", Georgia, serif;
+  --font-body:"IBM Plex Sans", "Inter", system-ui, sans-serif;
+  --font-mono:"IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+}
+
+body.dark{
+  --ink:#eef1fb;
+  --ink-soft:#b7bedb;
+  --ink-faint:#7d84a8;
+
+  --paper:#10142a;
+  --paper-raised:#171c38;
+  --paper-line:#2b3260;
+
+  --margin:#e0687a;
+  --margin-soft:#3a2030;
+
+  --accent:#7f93f2;
+  --accent-hover:#9aabf5;
+  --accent-soft:#232a52;
+
+  --gold:#e0ac4f;
+  --gold-soft:#3a2f16;
+
+  --border:#262c50;
+  --shadow:0 20px 45px -20px rgba(0,0,0,.55);
+  --shadow-sm:0 8px 20px -10px rgba(0,0,0,.5);
+}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  transition:background .3s ease, color .3s ease;
+  -webkit-font-smoothing:antialiased;
+}
+
+button{
+  font-family:inherit;
+}
+
+::selection{
+  background:var(--gold-soft);
+  color:var(--ink);
+}
+
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration:.001ms !important;
+    transition-duration:.001ms !important;
+  }
+}

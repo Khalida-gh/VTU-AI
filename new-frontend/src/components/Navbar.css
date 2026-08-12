@@ -1,0 +1,133 @@
+.navbar{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:0 clamp(16px, 4vw, 40px);
+  background:var(--paper-raised);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+/* ---------- brand ---------- */
+
+.logo-section{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  flex-shrink:0;
+}
+
+.logo-box{
+  width:42px;
+  height:42px;
+  border-radius:11px;
+  background:var(--accent);
+  color:var(--paper);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.logo-section h2{
+  font-family:var(--font-display);
+  font-size:21px;
+  font-weight:600;
+  line-height:1.1;
+  color:var(--ink);
+}
+
+.logo-section p{
+  margin-top:2px;
+  color:var(--ink-faint);
+  font-family:var(--font-mono);
+  font-size:11.5px;
+  letter-spacing:.02em;
+}
+
+/* ---------- search ---------- */
+
+.search-box{
+  flex:1;
+  max-width:440px;
+  height:44px;
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 16px;
+  background:var(--paper);
+  color:var(--ink-faint);
+  transition:.2s;
+}
+
+.search-box:focus-within{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+}
+
+.search-box input{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  color:var(--ink);
+  font-size:14.5px;
+  font-family:inherit;
+}
+
+.search-box input::placeholder{
+  color:var(--ink-faint);
+}
+
+/* ---------- icons ---------- */
+
+.nav-icons{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-shrink:0;
+}
+
+.nav-button{
+  width:40px;
+  height:40px;
+  border:1px solid transparent;
+  border-radius:var(--radius-sm);
+  background:transparent;
+  color:var(--ink-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.nav-button:hover{
+  background:var(--accent-soft);
+  color:var(--accent);
+}
+
+.nav-avatar{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:var(--gold-soft);
+  color:var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-left:6px;
+  flex-shrink:0;
+}
+
+@media (max-width:860px){
+  .search-box{
+    display:none;
+  }
+}

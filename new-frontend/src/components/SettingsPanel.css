@@ -1,0 +1,44 @@
+.settings-panel{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.settings-panel h3{
+  font-family:var(--font-display);
+  font-size:18px;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+
+.settings-panel button{
+  height:50px;
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  background:var(--paper);
+  color:var(--ink-soft);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:0 14px;
+  font-size:14px;
+  font-weight:500;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.settings-panel button:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  background:var(--accent-soft);
+}
+
+.settings-hint{
+  margin-top:6px;
+  font-size:12px;
+  line-height:1.6;
+  color:var(--ink-faint);
+  border-top:1px dashed var(--border);
+  padding-top:14px;
+}
